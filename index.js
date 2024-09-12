@@ -15,6 +15,7 @@ const songs = [
 ];
 
 
+
 // Object containing each Guardian's preferred genre
 const guardians = {
     "Star-Lord": "Rock",
@@ -40,7 +41,8 @@ function generatePlaylist(guardians, songs) {
 // Function to display playlists on the webpage
 function displayPlaylists() {
     const playlistsContainer = document.getElementById("playlists");
-    const playlists = generatePlaylist(guardians, songs);
+    const playlists = generatePlaylist(guardians, songs)
+
 
     playlists.forEach(({ guardian, playlist }) => {
         // Create a section for each Guardian
@@ -57,6 +59,7 @@ function displayPlaylists() {
             listItem.textContent = `${song.title} by ${song.artist}`;
             songList.appendChild(listItem);
             listItem.classList.add("song-title")
+        
         });
 
         guardianSection.appendChild(songList);
